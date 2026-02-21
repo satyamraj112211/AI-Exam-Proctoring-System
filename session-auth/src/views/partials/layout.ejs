@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= title || 'Exam System' %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #f4f5fb;
+      }
+      header {
+        background: #0f172a;
+        color: #e5e7eb;
+        padding: 12px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      header a {
+        color: #e5e7eb;
+        text-decoration: none;
+        margin-left: 16px;
+        font-size: 14px;
+      }
+      header a:hover {
+        text-decoration: underline;
+      }
+      .brand {
+        font-weight: 600;
+        letter-spacing: 0.03em;
+      }
+      main {
+        max-width: 960px;
+        margin: 32px auto;
+        padding: 0 16px;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        padding: 24px;
+      }
+      .btn {
+        display: inline-block;
+        border-radius: 6px;
+        border: none;
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: #0ea5e9;
+        color: #f9fafb;
+      }
+      .btn-primary:hover {
+        background: #0284c7;
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1px solid #d1d5db;
+        color: #374151;
+      }
+      .btn-outline:hover {
+        background: #f3f4f6;
+      }
+      .error {
+        margin-top: 12px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        background: #fef2f2;
+        color: #b91c1c;
+        border: 1px solid #fecaca;
+        font-size: 13px;
+      }
+      form label {
+        display: block;
+        font-size: 13px;
+        color: #374151;
+        margin-bottom: 4px;
+      }
+      form input {
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 6px;
+        border: 1px solid #d1d5db;
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+      form input:focus {
+        outline: none;
+        border-color: #0ea5e9;
+        box-shadow: 0 0 0 1px #0ea5e9;
+      }
+      .muted {
+        color: #6b7280;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">VirtualXA • Session Auth Demo</div>
+      <div>
+        <% if (!currentUser) { %>
+          <a href="/">Home</a>
+          <a href="/login">Login</a>
+        <% } else { %>
+          <span style="font-size: 13px;">
+            Logged in as <strong><%= currentUser.email %></strong> (<%= currentUser.role %>)
+          </span>
+          <form
+            action="/logout"
+            method="post"
+            style="display: inline-block; margin-left: 12px;"
+          >
+            <button type="submit" class="btn btn-outline">Logout</button>
+          </form>
+        <% } %>
+      </div>
+    </header>
+
+    <main>
+      <%- body %>
+    </main>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+<%- include('partials/layout', { title, body: `
+  <div class="card" style="max-width: 420px; margin: 0 auto;">
+    <h1 style="margin-top: 0; margin-bottom: 8px;">Login</h1>
+    <p class="muted" style="margin-bottom: 16px;">
+      Login is session-based. Once authenticated, this browser profile will stay logged in
+      until you press Logout or the session expires.
+    </p>
+
+    <form action="/login" method="post" novalidate>
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+      />
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="••••••••"
+        required
+      />
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
+        Sign in
+      </button>
+    </form>
+
+    <% if (error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+  </div>
+` }) %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

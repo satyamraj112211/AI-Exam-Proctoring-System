@@ -1,0 +1,36 @@
+<%- include('partials/layout', { title, body: `
+  <div class="card">
+    <h1 style="margin-top: 0; margin-bottom: 8px;">Access denied</h1>
+    <p class="muted" style="margin-bottom: 16px;">
+      You are logged in, but your role does not have permission to view this page.
+    </p>
+
+    <p style="margin-bottom: 12px;">
+      Required role(s):
+      <strong><%= (requiredRoles || []).join(', ') %></strong>
+    </p>
+
+    <p class="muted">
+      Try logging in with an account that has the correct permissions.
+    </p>
+  </div>
+` }) %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
